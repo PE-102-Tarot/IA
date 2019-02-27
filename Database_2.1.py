@@ -7,7 +7,7 @@ Created on Wed Feb 13 15:39:21 2019
 
 
 class Database():
-    def __init__(self, players):
+    def __init__(self):
         # Dictionnaire contenant des listes représentant les cartes non jouées
         self.dico = {'S': [i for i in range(1, 15)],
                      'H': [i for i in range(1, 15)],
@@ -17,13 +17,17 @@ class Database():
                      }
         self.excuse = False
         # Coupe à [spades, hearts, diamonds, clovers, trumps]
-        # 6eme case: indique que le joueur
+        # mex_trump: indique que le joueur
         # ne peut pas jouer au dessus d'un certain atout
-        self.coupes = {players[0]: [False for i in range(5)]+[21],
-                       players[1]: [False for i in range(5)]+[21],
-                       players[2]: [False for i in range(5)]+[21],
-                       players[3]: [False for i in range(5)]+[21],
-                       }
+        self.coupes = ({'S': False, 'H':  False, 'D':  False,
+                        'C':  False, 'T':  False, 'max_trump': 21}
+                       {'S': False, 'H':  False, 'D':  False,
+                        'C':  False, 'T':  False, 'max_trump': 21}
+                       {'S': False, 'H':  False, 'D':  False,
+                        'C':  False, 'T':  False, 'max_trump': 21}
+                       {'S': False, 'H':  False, 'D':  False,
+                        'C':  False, 'T':  False, 'max_trump': 21}
+                      )
         # Le chien a été révelé: on note les rois et les bouts qu'il contenait
         self.chien = []
 
