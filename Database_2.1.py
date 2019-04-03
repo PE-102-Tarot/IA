@@ -19,6 +19,7 @@ class Database():
         # Coupe à [spades, hearts, diamonds, clovers, trumps]
         # mex_trump: indique que le joueur
         # ne peut pas jouer au dessus d'un certain atout
+        # max_trump = 0 -> le joueur n'a plus d'atout
         self.coupes = ({'S': False, 'H':  False, 'D':  False,
                         'C':  False, 'T':  False, 'max_trump': 21}
                        {'S': False, 'H':  False, 'D':  False,
